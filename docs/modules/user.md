@@ -159,6 +159,19 @@ from bilibili_api import user
 
 **Returns:** 调用接口返回的内容。
 
+#### async def get_user_card()
+
+获取用户名片信息（可获取关注数，粉丝数，用户稿件数，点赞量等）
+
+**Returns:** 调用接口返回的内容。
+
+#### async def get_user_infos()
+
+获取多个用户信息（昵称，性别，生日，签名，头像URL，空间横幅URL等）
+
+**Returns:** 调用接口返回的内容。
+
+
 #### async def get_space_notice()
 
 获取用户空间公告

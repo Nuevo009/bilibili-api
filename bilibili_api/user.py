@@ -172,7 +172,32 @@ class User:
         return await request(
             "GET", url=api["url"], params=params, credential=self.credential
         )
+    async def get_user_card(self) -> dict:
+        """
+        获取用户名片信息（可获取关注数，粉丝数，用户稿件数，点赞量等）
 
+        Returns:
+            dict: 调用接口返回的内容。
+        """
+        api = API["info"]["card"]
+        params = {"mid": self.__uid}
+        return await request(
+            "GET", url=api["url"], params=params
+        )
+    async def get_user_infos(self, uids: List[int]) -> dict:
+        """
+        获取多用户信息（昵称，性别，生日，签名，头像 URL，空间横幅 URL 等）
+
+        Args:
+            uids       (List[int]) : 要获取的用户 UID 列表。最多 50 个。
+        Returns:
+            API 调用结果
+        """
+
+        api = API["info"]["user_infos"]
+        params = {"uids": join(",", uids)}
+
+        return await request("GET", api["url"], params=params)
     async def __get_self_info(self) -> dict:
         """
         获取自己的信息。如果存在缓存则使用缓存。

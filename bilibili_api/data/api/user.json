@@ -35,6 +35,24 @@
       },
       "comment": "用户基本信息"
     },
+    "card": {
+      "url": "https://api.bilibili.com/x/web-interface/card",
+      "method": "GET",
+      "verify": false,
+      "params": {
+        "mid": "int: uid"
+      },
+      "comment": "用户名片信息"
+    },
+    "user_infos": {
+      "url": "https://api.vc.bilibili.com/account/v1/user/cards",
+      "method": "GET",
+      "verify": false,
+      "params": {
+        "uids": "commaSeparatedList[int]: 目标用户的 UID 列表，逗号分隔"
+      },
+      "comment": "多用户详细信息"
+    },
     "space_notice": {
       "url": "http://api.bilibili.com/x/space/notice",
       "method": "GET",
